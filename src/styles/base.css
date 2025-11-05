@@ -1,0 +1,23 @@
+@import "components.css";
+@import "layout.css";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--main-text-color);
+  font-family: var(--main-text-font);
+}
+
+:root {
+  scroll-behavior: smooth;
+  --main-text-font: "Open Sans", sans-serif;
+  --main-text-color: rgb(22, 22, 22);
+  --secondary-text-color: rgb(72, 72, 72);
+  --light-component-color: rgb(228, 255, 255);
+  --dark-component-color: rgb(172, 226, 226);
+  --hover-component-color: rgb(141, 198, 198);
+}

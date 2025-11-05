@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chuck_norris_jokes</title>
+    <link rel="stylesheet" href="src/styles/base.css" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <main>
+      <div class="left-column">
+        <header
+          data-hx-trigger="load"
+          data-hx-swap="outerHTML"
+          data-hx-get="index.header.partial.html"
+        ></header>
+        <section
+          data-hx-trigger="load"
+          data-hx-swap="outerHTML"
+          data-hx-get="index.search-block.partial.html"
+        ></section>
+      </div>
+
+      <aside class="right-column">
+        <section
+          data-hx-trigger="load"
+          data-hx-swap="outerHTML"
+          data-hx-get="index.favourite-block.partial.html"
+        ></section>
+      </aside>
+    </main>
+    <script type="module" src="app/main.js"></script>
+  </body>
+</html>

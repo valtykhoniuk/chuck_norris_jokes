@@ -1,0 +1,37 @@
+@import "base.css";
+
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.left-column {
+  flex: 2;
+  background-color: var(--light-component-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.right-column {
+  flex: 1;
+  background-color: var(--dark-component-color);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.search-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
