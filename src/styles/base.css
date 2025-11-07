@@ -1,6 +1,7 @@
 @import "components.css";
 @import "layout.css";
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import "media.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
 *,
 *::before,
@@ -14,10 +15,11 @@
 
 :root {
   scroll-behavior: smooth;
-  --main-text-font: "Open Sans", sans-serif;
+  --main-text-font: "Roboto Mono", monospace;
   --main-text-color: rgb(22, 22, 22);
   --secondary-text-color: rgb(72, 72, 72);
   --light-component-color: rgb(228, 255, 255);
-  --dark-component-color: rgb(172, 226, 226);
-  --hover-component-color: rgb(141, 198, 198);
+  --dark-component-color: rgb(186, 233, 233);
+  --accent-text-color: rgb(122, 176, 176);
+  --hover-component-color: rgb(113, 183, 183);
 }

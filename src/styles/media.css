@@ -1,0 +1,8 @@
+@import "base.css";
+
+@media (max-width: 500px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}
