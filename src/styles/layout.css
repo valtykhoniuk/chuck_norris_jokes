@@ -60,3 +60,18 @@ main {
   transform: scale(1.2);
   margin-right: 0.5rem;
 }
+.category-list {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.category-list .active {
+  background-color: var(--hover-component-color);
+}
+
+.hidden {
+  display: none;
+}
