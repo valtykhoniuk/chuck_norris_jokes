@@ -14,6 +14,17 @@ const categoryList = document.createElement("div");
 categoryList.classList.add("category-list", "hidden");
 const categories = await ChuckAPI.getCategories();
 
+const inputSearch = document.createElement("div");
+inputSearch.classList.add("search-bar", "hidden");
+const searchInput = document.createElement("input");
+searchInput.type = "text";
+searchInput.placeholder = "Enter a keyword...";
+searchInput.classList.add("search-input");
+
+inputSearch.appendChild(searchInput);
+const searchLabel = form.querySelector(".search-label");
+searchLabel.insertAdjacentElement("afterend", inputSearch);
+
 form.addEventListener("change", () => {
   const selected = form.querySelector(
     'input[name="search-type"]:checked'
@@ -23,6 +34,12 @@ form.addEventListener("change", () => {
     showCategories();
   } else {
     hideCategories();
+  }
+
+  if (selected === "search") {
+    showSearchBar();
+  } else {
+    hideSearchBar();
   }
 });
 
@@ -36,12 +53,24 @@ form.addEventListener("submit", async (e) => {
 
   if (type === "random") {
     data = await ChuckAPI.getRandom();
+    container.appendChild(createJokeCard(data, false));
   } else if (type === "category") {
     if (!selectedCategory) return alert("Choose a category first!");
     data = await ChuckAPI.getByCategory(selectedCategory);
-  }
+    container.appendChild(createJokeCard(data, false));
+  } else if (type === "search") {
+    let query = searchInput.value.trim();
+    if (!query) return alert("Enter a search term first!");
+    data = await ChuckAPI.getBySearchInput(query);
 
-  container.appendChild(createJokeCard(data, false));
+    if (data.result && data.result.length > 0) {
+      data.result.forEach((joke) => {
+        container.appendChild(createJokeCard(joke, false));
+      });
+    } else {
+      alert("No jokes were found");
+    }
+  }
 });
 
 function showCategories() {
@@ -75,4 +104,12 @@ function showCategories() {
 function hideCategories() {
   categoryList.classList.add("hidden");
   selectedCategory = null;
+}
+
+function showSearchBar() {
+  inputSearch.classList.remove("hidden");
+}
+
+function hideSearchBar() {
+  inputSearch.classList.add("hidden");
 }
