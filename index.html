@@ -30,19 +30,23 @@
                 <input type="radio" name="search-type" value="category" />
                 From categories
               </label>
+              <div class="category-list hidden"></div>
               <label class="search-label">
                 <input type="radio" name="search-type" value="search" />
                 Search
               </label>
+              <div class="search-bar">
+                <input
+                  class="search-input hidden"
+                  placeholder="enter a keyword"
+                />
+              </div>
             </div>
             <button type="submit">Get a joke</button>
           </form>
-          <script
-            src="https://unpkg.com/htmx.org@1.9.10"
-            integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
-            crossorigin="anonymous"
-          ></script>
         </section>
+
+        <div class="jokes-block"></div>
       </div>
 
       <aside class="right-column">
