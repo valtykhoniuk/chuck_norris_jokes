@@ -1,12 +1,22 @@
-import { choiceUIHandlers } from "./ui.js";
-import { searchHandlers } from "./model.js";
+import { choiceUIHandlers, renderCategories } from "./ui.js";
+import { searchHandlers, renderFavorites } from "./model.js";
 
 const form = document.querySelector("form");
-const container = document.querySelector(".jokes-block");
 const categoryList = form.querySelector(".category-list");
 const searchInput = document.querySelector(".search-input");
 
+const container = document.querySelector(".jokes-block");
+const favoritesContainer = document.querySelector(".favorite-block__jokes");
+
 const selectedCategoryRef = { value: null };
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderFavorites(favoritesContainer);
+});
+
+document.addEventListener("favoritesUpdated", () => {
+  renderFavorites(favoritesContainer);
+});
 
 form.addEventListener("change", async () => {
   const selected = form.querySelector(

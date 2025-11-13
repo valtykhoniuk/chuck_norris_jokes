@@ -20,6 +20,7 @@
   --secondary-text-color: rgb(72, 72, 72);
   --light-component-color: rgb(228, 255, 255);
   --dark-component-color: rgb(186, 233, 233);
-  --accent-text-color: rgb(122, 176, 176);
+  --card-color: rgb(154, 211, 211);
+  --accent-text-color: rgb(110, 164, 164);
   --hover-component-color: rgb(113, 183, 183);
 }

@@ -28,6 +28,7 @@ main {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  gap: 5rem;
 }
 
 .search-block {
