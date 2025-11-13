@@ -5,36 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>chuck_norris_jokes</title>
     <link rel="stylesheet" href="src/styles/base.css" />
-    <script
-      src="https://unpkg.com/htmx.org@1.9.10"
-      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
-      crossorigin="anonymous"
-    ></script>
   </head>
 
   <body>
     <main>
       <div class="left-column">
-        <header
-          data-hx-trigger="load"
-          data-hx-swap="outerHTML"
-          data-hx-get="index.header.partial.html"
-        ></header>
-        <section
-          data-hx-trigger="load"
-          data-hx-swap="outerHTML"
-          data-hx-get="index.search-block.partial.html"
-        ></section>
+        <header class="inner-header">
+          <h2>MSI 2020</h2>
+        </header>
+
+        <section class="search-block">
+          <div>
+            <h2>Hey!</h2>
+            <h3>Let's try to find a joke for you:</h3>
+          </div>
+
+          <form>
+            <div class="search-block__radio-buttons">
+              <label>
+                <input type="radio" name="search-type" value="random" />
+                Random
+              </label>
+              <label class="category-label">
+                <input type="radio" name="search-type" value="category" />
+                From categories
+              </label>
+              <div class="category-list hidden"></div>
+              <label class="search-label">
+                <input type="radio" name="search-type" value="search" />
+                Search
+              </label>
+              <div class="search-bar">
+                <input
+                  class="search-input hidden"
+                  placeholder="enter a keyword"
+                />
+              </div>
+            </div>
+            <button type="submit">Get a joke</button>
+          </form>
+        </section>
+
+        <div class="jokes-block"></div>
       </div>
 
       <aside class="right-column">
-        <section
-          data-hx-trigger="load"
-          data-hx-swap="outerHTML"
-          data-hx-get="index.favourite-block.partial.html"
-        ></section>
+        <section class="favourite-block">
+          <h2>Favourite</h2>
+        </section>
       </aside>
     </main>
-    <script type="module" src="app/main.js"></script>
+    <script type="module" src="./src/app/main.js"></script>
   </body>
 </html>
