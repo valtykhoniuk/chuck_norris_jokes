@@ -1,8 +1,32 @@
 @import "base.css";
 
-@media (max-width: 500px) {
-  main {
-    display: flex;
-    flex-direction: column;
+@media (max-width: 768px) {
+  .burger-btn {
+    display: block;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1001;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+  }
+
+  .right-column {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #ffffff;
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .right-column.active {
+    right: 0;
   }
 }

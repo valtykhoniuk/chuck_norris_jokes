@@ -10,6 +10,13 @@ const favoritesContainer = document.querySelector(".favorite-block__jokes");
 
 const selectedCategoryRef = { value: null };
 
+const burgerBtn = document.querySelector(".burger-btn");
+const rightColumn = document.querySelector(".right-column");
+
+burgerBtn.addEventListener("click", () => {
+  rightColumn.classList.toggle("active");
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   renderFavorites(favoritesContainer);
 });
