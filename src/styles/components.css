@@ -17,6 +17,8 @@
   background-color: var(--card-color);
   padding: 1rem;
   border-radius: 1rem;
+  max-width: 600px;
+  min-width: 200px;
 }
 
 .joke-card button {

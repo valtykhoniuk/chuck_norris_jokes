@@ -1,22 +1,22 @@
 import { favoritesModel } from "../../app/favorites.js";
-import { storage } from "../../utils/storage.js";
 
-export function createJokeCard(joke, isFavourite = false) {
+export function createJokeCard(joke) {
+  const isFavourite = favoritesModel.isFavorite(joke.id);
+
   const card = createCardTemplate(joke, isFavourite);
 
   const favButton = card.querySelector(".fav-btn");
 
   favButton.addEventListener("click", () => {
-    isFavourite = !isFavourite;
-    favButton.textContent = isFavourite ? "♥" : "♡";
+    const newState = !favoritesModel.isFavorite(joke.id);
+    favButton.textContent = newState ? "♥" : "♡";
 
-    if (isFavourite) {
+    if (newState) {
       favoritesModel.add(joke);
-      document.dispatchEvent(new CustomEvent("favoritesUpdated"));
     } else {
       favoritesModel.remove(joke.id);
-      document.dispatchEvent(new CustomEvent("favoritesUpdated"));
     }
+    document.dispatchEvent(new CustomEvent("favoritesUpdated"));
   });
 
   return card;

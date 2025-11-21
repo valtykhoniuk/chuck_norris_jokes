@@ -53,9 +53,9 @@ export function renderFavorites(container) {
 
   if (favorites.length === 0) {
     container.textContent = "No favorite jokes yet 😅";
-  } else {
-    favorites.forEach((joke) => {
-      container.appendChild(createJokeCard(joke, true));
-    });
+    return;
   }
+  favorites.forEach((joke) => {
+    container.appendChild(createJokeCard(joke, true));
+  });
 }

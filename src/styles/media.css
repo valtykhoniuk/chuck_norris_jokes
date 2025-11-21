@@ -1,6 +1,6 @@
 @import "base.css";
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .burger-btn {
     display: block;
     position: fixed;
