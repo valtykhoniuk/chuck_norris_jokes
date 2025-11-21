@@ -75,3 +75,7 @@ main {
 .hidden {
   display: none;
 }
+
+.burger-btn {
+  display: none;
+}
