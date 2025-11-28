@@ -1,5 +1,6 @@
 import { ChuckAPI } from "../api/chuck.js";
 import { createJokeCard } from "../ui/components/JokeCard.js";
+import { favoritesModel } from "./favorites.js";
 
 export const searchHandlers = {
   random: async (container) => {
@@ -44,4 +45,17 @@ export function renderNoData(container) {
   msg.textContent = "No jokes were found";
   msg.classList.add("no-jokes");
   container.appendChild(msg);
+}
+
+export function renderFavorites(container) {
+  container.innerHTML = "";
+  const favorites = favoritesModel.getAll();
+
+  if (favorites.length === 0) {
+    container.textContent = "No favorite jokes yet 😅";
+    return;
+  }
+  favorites.forEach((joke) => {
+    container.appendChild(createJokeCard(joke, true));
+  });
 }
