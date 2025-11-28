@@ -13,8 +13,6 @@ const selectedCategoryRef = { value: null };
 const burgerBtn = document.querySelector(".burger-btn");
 const rightColumn = document.querySelector(".right-column");
 
-[0, 1, 2, 3].map((element, index, array) => console.log(element, index, array));
-
 burgerBtn.addEventListener("click", () => {
   rightColumn.classList.toggle("active");
 });
